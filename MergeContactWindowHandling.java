@@ -41,9 +41,9 @@ public class MergeContactWindowHandling {
 		Set<String> windowHandlesSet2 = driver.getWindowHandles();
 		List<String> windowHandlesList2 = new ArrayList<String>(windowHandlesSet2);
 		driver.switchTo().window(windowHandlesList2.get(1));
-		((RemoteWebDriver) driver).findElementByXPath("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId'])[2]/a").click();
+		driver.findElement(By.xpath("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId'])[2]/a")).click();
 		driver.switchTo().window(windowHandlesList2.get(0));	
-		((RemoteWebDriver) driver).findElementByXPath("//a[text()='Merge']").click();
+		driver.findElement(By.xpath("//a[text()='Merge']")).click();
 		Alert alert1 = driver.switchTo().alert();
 		alert1.accept();
 		Thread.sleep(20000);
